@@ -95,7 +95,7 @@ type Action =
   | { type: 'CHECK_IN'; payload: Omit<VehicleJob, 'id' | 'stage' | 'createdAt' | 'motResults' | 'partsLabor'> }
   | { type: 'MOVE_STAGE'; payload: { id: string; stage: Stage } }
   | { type: 'UPDATE_MOT_RESULT'; payload: { id: string; category: string; status: MotStatus } }
-  | { type: 'ADD_PART_LABOR'; payload: { id: string; item: { name: string; unitCost: number; hours: number } } }
+  | { type: 'ADD_PART_LABOR'; payload: { id: string; item: { id: string; name: string; unitCost: number; hours: number } } }
   | { type: 'COMPLETE_PAYMENT'; payload: { id: string } };
 
 function appReducer(state: AppState, action: Action): AppState {
